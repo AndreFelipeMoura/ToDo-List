@@ -1,0 +1,57 @@
+.list {
+    background: white;
+    border-radius: 2px;
+    margin-top: -15rem;
+    padding: 70px 60px;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  header h2 {
+    color: black;
+    font-size: 5px;
+  }
+  
+  .input-add {
+    background-color: white;
+    font-size: 16px;
+    display: flex;    
+    align-items: center;
+    
+ 
+
+    gap: 0.25rem;
+  }
+  
+  input {
+    flex: 1;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  button {
+    font-weight: 600;
+    border-radius: 8px;
+    border: 0;
+  
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .tarefa-add {
+    background: green;
+  }
+  
+  .delete-task {
+    background: red;
+  }
+  

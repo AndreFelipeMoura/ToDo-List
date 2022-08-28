@@ -53,7 +53,7 @@ return (
 
         <div className="input-add">
           <p>Titulo</p>
-          <input placeholder='adicione nova tarefa' type="text" onChange={(e)=> {
+          <input placeholder=" Adicione Nova Tarefa" type="text" onChange={(e)=> {
           setNewTask(e.target.value);
           }}
           value={newTask}
@@ -88,9 +88,9 @@ return (
                                      onClick={() => completeTask(task.id)}
                                      readOnly  />
                                 </label>
-                                <p>tarefa concluida</p>
-                                <p> TITULO: {task.title}</p>
-                                <p> Descrição: {task.desc} </p>
+                                <p> OK! </p>
+                                <p> Título: {task.title} </p>
+                                <p className="desc"> Descrição: {task.desc} </p>
                                 
                                 
                                 

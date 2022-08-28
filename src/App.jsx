@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './components/footer/Footer';
 import List from './components/list/List';
 
 
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
     
     <List />
+    <Footer />
    
 
     </div>
