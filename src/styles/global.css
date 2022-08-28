@@ -1,0 +1,24 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: 'Open-sans' , sans-serif;
+    font-size: large;
+  }
+
+  header {
+    font-family: 'Open-sans' , sans-serif;
+    font-size: large;
+    color:black;
+  
+  }
+  
+  body {
+    background-color: yellow;
+    
+    min-height: 100vh;
+  }
+  
+  button {
+    cursor: pointer;
+  }
