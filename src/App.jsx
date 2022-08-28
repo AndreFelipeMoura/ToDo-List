@@ -1,15 +1,21 @@
+import React from 'react';
+import List from './components/list/List';
 
 
 function App() {
  
 
   return (
-    <>
-    <p>Todolist</p>
-    </>
+    <div className="App">
+    
+    <List />
+   
+
+    </div>
+    
    
     
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,10 +1,14 @@
-import {} from "react";
+import React from "react";
 import Header from "../header/Header";
 
-export function List() {
+
+
+function List() {
     return(
-    <>
+    <div>
     <Header />
-    </>
+    </div>
     )
 }
+
+export default List;

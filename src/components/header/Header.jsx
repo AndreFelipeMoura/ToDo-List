@@ -1,13 +1,17 @@
 import React from "react";
-import styles from "./styles/global.css"
 
-export function Header() {
+
+
+ function Header() {
     return (
         
-    <div className="header">
-        <p>Resilia Todo List</p>
+    <><div className="header">    <p className="title">Resilia Todo List</p></div></>
+        
 
-    </div>
+  
+    
     );
 };
+
+export default Header;
 
