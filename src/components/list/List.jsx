@@ -1,54 +1,123 @@
-import React from "react";
+import { useState } from "react";
 import Header from "../header/Header";
 
 
+const List = () => {
+const [list, setList] = useState([]);
+const [newTask, setNewTask] = useState("");
+const [newDesc, setNewDesc] = useState("");
 
-function List() {
-return(
+
+function addNewTask () {
+const task = {
+id: Math.random(),
+title: newTask,
+desc: newDesc,
+isComplet: false,
+};
+
+if (task.title === "" || task.desc === "") {
+return alert("Preencha os dois campos para concluir!");
+}
+
+setList([...list, task ]);
+setNewTask("");
+setNewDesc("");
+}
+
+function deleteTask(id) {
+const filterTasks = list.filter((task) => task.id !== id);
+setList(filterTasks);
+}
+
+function completeTask(id) {
+const newTasks = list.map((task) =>
+task.id === id ? {
+...task,
+isComplete: !task.isComplete,
+}
+: task
+);
+setList(newTasks);
+
+}
+
+
+return (
 <>
-    <Header />
-    <div className="container">
-        <section className="list">
+  <Header />
+  <div className="container">
+    <section className="list">
+      <header>
+        <h2 className="titulo-nova-tarefa"> NOVA TAREFA </h2>
 
-            <h2 className=""> NOVA TAREFA </h2>
-            <form className="form-input-add">
-                <div>
-                    <input placeholder='adicione nova tarefa' type="text" />
-                    <p> Descrição: </p>
-                    <textarea />
+        <div className="input-add">
+          <p>Titulo</p>
+          <input placeholder='adicione nova tarefa' type="text" onChange={(e)=> {
+          setNewTask(e.target.value);
+          }}
+          value={newTask}
+          />
+          <p> Descrição: </p>
+          <textarea onChange={(e)=> {
+                  setNewDesc(e.target.value);
+                }}
+                value={newDesc}/>
 
 
-                    <button> ADICIONAR TAREFA </button>
+                    <button type="submit" className="tarefa-add" onClick={addNewTask}> ADICIONAR TAREFA </button>
                     </div>
-            </form>
+            
+          </header>
+
+            
         
     </section>
     <section>
-    <h2 className=""> TAREFAs </h2>
-            <form className = "form-input-task">
-                <div>
-                    <ul>
-                        <li>
-                            <div>
+        <div className="tarefas">
+        <h2 className="titulo-tarefas"> TAREFAs </h2>
+                   <ul>
+                        {list.map((task) => (
+
+                        
+                        <li key={task.id}>
+                            <div className={task.isComplete ? "completed" : ""}>
                                 <label>
-                                    <input></input>
+                                    <input className="checkbox" type="checkbox"
+                                     checked={task.isComplete}
+                                     onClick={() => completeTask(task.id)}
+                                     readOnly  />
                                 </label>
+                                <p>tarefa concluida</p>
+                                <p> TITULO: {task.title}</p>
+                                <p> Descrição: {task.desc} </p>
+                                
+                                
+                                
+                                <button className="delete-task" type="button" onClick={() => deleteTask(task.id)}> Excluir Tarefa </button>
                             </div>
                         </li>
+                        ))};
                     </ul>
-                    <input type="checkbox"  />
-                    <p> Descrição: </p>
-                    <textarea />
+
+                    
+                   
+                
+                   
                     
 
-                    </div>
-            </form>
+                    
+            
+        </div>
+    
 
     </section>
 
-    </div></>
+    </div>
+    </>
      
-    )
-}
+    )}
+                        
+
 
 export default List;
