@@ -11,7 +11,7 @@ const [newDesc, setNewDesc] = useState("");
 
 function addNewTask () {
 const task = {
-id: Math.random(),
+id: crypto.randomUUID(),
 title: newTask,
 desc: newDesc,
 isComplet: false,
