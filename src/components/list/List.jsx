@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {} from "react-icons"
+import { FaBeer } from 'react-icons/fa';
 import Header from "../header/Header";
 
 
@@ -47,6 +47,7 @@ setList(newTasks);
 return (
 <>
   <Header />
+  <FaBeer />
   <div className="container">
     <section className="list">
       <header>
