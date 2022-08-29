@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {} from "react-icons"
 import Header from "../header/Header";
 
 
@@ -75,7 +76,7 @@ return (
     </section>
     <section>
         <div className="tarefas">
-        <h2 className="titulo-tarefas"> TAREFAs </h2>
+        <h2 className="titulo-tarefas"> SUAS TAREFAS </h2>
                    <ul>
                         {list.map((task) => (
 
